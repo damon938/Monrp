@@ -1,10 +1,26 @@
+let players = [];
+
+window.onload = function() {
+  Tabletop.init({
+    key: "https://docs.google.com/spreadsheets/d/13WGIqcbx2NvkrEQ2m0ceYFaTkEiuHjYvIbK0YWDx53E/edit?usp=drivesdk",
+    simpleSheet: true,
+    callback: function(data, tabletop) {
+      players = data;
+      console.log("Données Google Sheet chargées :", players);
+    }
+  });
+};
+
 function getPlayerData() {
   const playerId = document.getElementById('playerId').value.trim();
   const player = players.find(p => p.ID === playerId);
 
   if(player) {
-  
-    let avatar = player.Avatar ? player.Avatar : "https://files.catbox.moe/81xavw.jpg";
+    
+    let avatar = "";
+    if(player.Race === "Démon") avatar = "https://files.catbox.moe/vjhvz3.jpg";
+    else if(player.Race === "Vampire") avatar = "https://files.catbox.moe/vjhvz3.jpg";
+    else avatar = "https://files.catbox.moe/81xavw.jpg";
 
     document.getElementById('carteJoueur').innerHTML = `
       <img src="${avatar}" alt="Avatar">
