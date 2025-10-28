@@ -1,21 +1,53 @@
-body { 
-  font-family: Arial; 
-  text-align: center; 
-  padding: 50px; 
-  background-color: #f0f0f0; 
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to bottom, #d1c4e9, #f3e5f5);
 }
-input { 
-  padding: 5px; 
-  width: 200px; 
+
+input {
+  padding: 5px;
+  width: 200px;
 }
-button { 
-  padding: 5px 10px; 
-  margin-left: 10px; 
-  cursor: pointer; 
+
+button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
 }
-#carteJoueur { 
-  margin-top: 20px; 
-  border: 1px solid #ccc; 
-  padding: 20px; 
-  background-color: #fff; 
+
+#carteJoueur {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px solid #6a1b9a;
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+  box-shadow: 0 0 15px rgba(106, 27, 154, 0.7);
+  color: #4a148c;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#carteJoueur h2 {
+  text-align: center;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px #fff;
+  margin-bottom: 10px;
+}
+
+#carteJoueur p {
+  margin: 5px 0;
+  line-height: 1.3em;
+}
+
+#carteJoueur img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
