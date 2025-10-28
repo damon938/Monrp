@@ -2,7 +2,7 @@ let players = [];
 
 window.onload = function() {
   Tabletop.init({
-    key: "https://docs.google.com/spreadsheets/d/13WGIqcbx2NvkrEQ2m0ceYFaTkEiuHjYvIbK0YWDx53E/edit?usp=drivesdk",
+    key: "13WGIqcbx2NvkrEQ2m0ceYFaTkEiuHjYvIbK0YWDx53E", 
     simpleSheet: true,
     callback: function(data, tabletop) {
       players = data;
@@ -17,13 +17,10 @@ function getPlayerData() {
 
   if(player) {
     
-    let avatar = "";
-    if(player.Race === "Démon") avatar = "https://files.catbox.moe/vjhvz3.jpg";
-    else if(player.Race === "Vampire") avatar = "https://files.catbox.moe/vjhvz3.jpg";
-    else avatar = "https://files.catbox.moe/81xavw.jpg";
+    let imageDefinitive = "	https://files.catbox.moe/81xavw.jpg	"; // Remplace par ton image
 
     document.getElementById('carteJoueur').innerHTML = `
-      <img src="${avatar}" alt="Avatar">
+      <img src="${imageDefinitive}" alt="Avatar">
       <h2>${player.Nom}</h2>
       <p><strong>Race :</strong> ${player.Race}</p>
       <p><strong>Classe :</strong> ${player.Classe}</p>
@@ -33,6 +30,7 @@ function getPlayerData() {
       <p><strong>💰 Argent :</strong> ${player.Argent}</p>
       <p><strong>🎒 Inventaire :</strong> ${player.Inventaire}</p>
       <p><strong>🏆 Victoires :</strong> ${player.Victoires} | <strong>❌ Défaites :</strong> ${player.Defaites}</p>
+      <p><strong>🗺️ Quêtes :</strong> ${player.Quetes}</p>
     `;
   } else {
     document.getElementById('carteJoueur').innerHTML = "ID invalide !";
